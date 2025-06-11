@@ -54,7 +54,6 @@ class Solution {
  * 输入：s = "(1+(4+5+2)-3)+(6+8)"
  * 输出：23
  *
- *
  * 提示：
  * 1 <= s.length <= 3 * 105
  * s 由数字、'+'、'-'、'('、')'、和 ' ' 组成
@@ -67,7 +66,7 @@ class Solution {
 public class LC224 {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String s = "1-(     -2)";
-        System.out.println(solution.calculate(s)); // 输出结果：3
+        String s = "(1+(4+5+2)-3)+(6+8)";
+        System.out.println(solution.calculate(s)); // 输出结果：23
     }
 }
