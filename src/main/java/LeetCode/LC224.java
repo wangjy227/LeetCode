@@ -26,7 +26,7 @@ import java.util.Stack;
  * 输入中不存在两个连续的操作符
  * 每个数字和运行的计算将适合于一个有符号的 32位 整数
  */
-class Solution {
+class Solution_LC224 {
     // lc224 基本计算器
     public int calculate(String s) {
         // 存储计算过程中的数值
@@ -65,7 +65,7 @@ class Solution {
 
 public class LC224 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution_LC224 solution = new Solution_LC224();
         String s = "(1+(4+5+2)-3)+(6+8)";
         System.out.println(solution.calculate(s)); // 输出结果：23
     }
