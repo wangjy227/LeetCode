@@ -19,7 +19,7 @@ package LeetCode;
  * 0 <= t.length <= 10^4
  * 两个字符串都只由小写字符组成。
  */
-class Solution {
+class Solution_LC392 {
     public boolean isSubsequence(String s, String t) {
         int len1 = s.length(), len2 = t.length();
         int left = 0, right = 0;
@@ -37,7 +37,7 @@ class Solution {
 }
 public class LC392 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution_LC392 solution = new Solution_LC392();
         String s = "abc";
         String t = "ahbgdc";
         System.out.println(solution.isSubsequence(s, t));   // 输出 true
