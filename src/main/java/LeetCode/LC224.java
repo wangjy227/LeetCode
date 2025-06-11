@@ -1,0 +1,73 @@
+package LeetCode;
+import java.util.Stack;
+class Solution {
+    // lc224 基本计算器
+    public int calculate(String s) {
+        // 存储计算过程中的数值
+        Stack<Integer> values = new Stack<>();
+        // 存储计算过程中的相关符号
+        Stack<Integer> signs = new Stack<>();
+        int result = 0;
+        int sign = 1;
+        int num = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            // 判断是否是数字
+            if (Character.isDigit(c)) {
+                num = num * 10 + (c - '0');
+            } else if (c == '+' || c == '-') {
+                result += sign * num;
+                num = 0;
+                sign = c == '+' ? 1 : -1;
+            }   // 如果是左括号，将数值和符号都存入
+            else if (c == '(') {
+                values.push(result);
+                signs.push(sign);
+                result = 0;
+                sign = 1;
+            } else if (c == ')') {
+                result += sign * num;
+                num = 0;
+                result = values.pop() + signs.pop() * result;
+            }
+        }
+
+        return result + sign * num;
+    }
+}
+
+/**
+ * 基本计算器
+ * 给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。
+ * 注意:不允许使用任何将字符串作为数学表达式计算的内置函数，比如 eval() 。
+ * 示例 1：
+ *
+ * 输入：s = "1 + 1"
+ * 输出：2
+ * 示例 2：
+ *
+ * 输入：s = " 2-1 + 2 "
+ * 输出：3
+ * 示例 3：
+ *
+ * 输入：s = "(1+(4+5+2)-3)+(6+8)"
+ * 输出：23
+ *
+ *
+ * 提示：
+ * 1 <= s.length <= 3 * 105
+ * s 由数字、'+'、'-'、'('、')'、和 ' ' 组成
+ * s 表示一个有效的表达式
+ * '+' 不能用作一元运算(例如， "+1" 和 "+(2 + 3)" 无效)
+ * '-' 可以用作一元运算(即 "-1" 和 "-(2 + 3)" 是有效的)
+ * 输入中不存在两个连续的操作符
+ * 每个数字和运行的计算将适合于一个有符号的 32位 整数
+ */
+public class LC224 {
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        String s = "1-(     -2)";
+        System.out.println(solution.calculate(s)); // 输出结果：3
+    }
+}
