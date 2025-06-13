@@ -1,5 +1,7 @@
 package LeetCode;
 
+import java.util.Arrays;
+
 /**
  * 两数之和 II - 输入有序数组
  * 给你一个下标从 1 开始的整数数组 numbers ，该数组已按 非递减顺序排列  ，请你从数组中找出满足相加之和等于目标数 target 的两个数。如果设这两个数分别是 numbers[index1] 和 numbers[index2] ，则 1 <= index1 < index2 <= numbers.length 。
@@ -72,9 +74,6 @@ public class LC167 {
         int[] numbers = {2, 3, 4};
         int target = 6;
         int[] arr = solution.twoSum(numbers, target);
-        for (int i : arr) {
-            System.out.print(i + ", ");
-        }
-        System.out.println();   // 输出 true
+        System.out.println(Arrays.toString(arr));   // 输出 [1,3]
     }
 }
