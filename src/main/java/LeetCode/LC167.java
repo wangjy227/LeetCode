@@ -27,7 +27,7 @@ import java.util.Arrays;
  * -1000 <= target <= 1000
  * 仅存在一个有效答案
  */
-class Solution {
+class Solution_LC167 {
     // 双指针
     public int[] twoSum(int[] numbers, int target) {
         int len = numbers.length;
@@ -70,7 +70,7 @@ class Solution {
 
 public class LC167 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution_LC167 solution = new Solution_LC167();
         int[] numbers = {2, 3, 4};
         int target = 6;
         int[] arr = solution.twoSum(numbers, target);
