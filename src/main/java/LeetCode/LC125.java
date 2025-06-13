@@ -54,7 +54,7 @@ class Solution_LC125 {
         return sb.toString();
     }
 }
-
+// 验证回文串
 public class LC125 {
     public static void main(String[] args) {
         Solution_LC125 solution = new Solution_LC125();

@@ -41,6 +41,7 @@ class Solution_LC42 {
         return sum;
     }
 }
+// 接雨水
 public class LC42 {
     public static void main(String[] args) {
         Solution_LC42 solution = new Solution_LC42();

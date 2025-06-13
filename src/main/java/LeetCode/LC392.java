@@ -35,6 +35,7 @@ class Solution_LC392 {
         return false;
     }
 }
+// 判断子序列
 public class LC392 {
     public static void main(String[] args) {
         Solution_LC392 solution = new Solution_LC392();

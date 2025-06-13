@@ -67,7 +67,7 @@ class Solution_LC167 {
         return new int[0];
     }
 }
-
+// 两数之和 II - 输入有序数组
 public class LC167 {
     public static void main(String[] args) {
         Solution_LC167 solution = new Solution_LC167();
