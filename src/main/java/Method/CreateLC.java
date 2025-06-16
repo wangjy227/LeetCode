@@ -2,12 +2,12 @@ package Method;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 public class CreateLC {
     private static final String FILEPATH = "D:\\Desktop\\i-java\\LeetCode\\src\\main\\java\\LeetCode\\LC.java";
     public static void main (String [] args) {
 // 定义要生成的 Java 代码内容
-        String javaCode = "package LeetCode;\n\n\n\n" +
+        String javaCode =
+                "package LeetCode;\n\n\n\n" +
                 "public class LC {\n" +
                 "\tpublic static void main (String [] args) {\n" +
                 "\t\tSolution solution = new Solution ();\n" +
