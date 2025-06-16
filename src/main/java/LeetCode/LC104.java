@@ -17,14 +17,27 @@ import Method.TreeNode;
  * -100 <= Node.val <= 100
  */
 class Solution {
+    private int maxDepth = 0;
     public int maxDepth(TreeNode root) {
-        return 1;
+        dfs(root, 1);
+        return maxDepth;
+    }
+    public void dfs(TreeNode root, int depth) {
+        if(root == null){
+            maxDepth = Math.max(maxDepth, depth-1);
+            return;
+        }
+        dfs(root.left, depth+1);
+        dfs(root.right, depth+1);
     }
 }
 // 二叉树的最大深度
 public class LC104 {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution);
+        TreeNode root = new TreeNode();
+        Integer[] arr = {3,9,20,null,null,15,7};
+        root = root.CreateTreeByCe(arr);
+        System.out.println(solution.maxDepth(root));
     }
 }
