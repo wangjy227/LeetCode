@@ -16,7 +16,7 @@ import Method.TreeNode;
  * 树中节点的数量在 [0, 104] 区间内。
  * -100 <= Node.val <= 100
  */
-class Solution {
+class Solution_LC104 {
     private int maxDepth = 0;
     public int maxDepth(TreeNode root) {
         dfs(root, 1);
@@ -34,10 +34,10 @@ class Solution {
 // 二叉树的最大深度
 public class LC104 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution_LC104 solutionLC = new Solution_LC104();
         TreeNode root = new TreeNode();
         Integer[] arr = {3,9,20,null,null,15,7};
         root = root.CreateTreeByCe(arr);
-        System.out.println(solution.maxDepth(root));
+        System.out.println(solutionLC.maxDepth(root));  // 输出 3
     }
 }
