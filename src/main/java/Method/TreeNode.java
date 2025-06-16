@@ -10,6 +10,8 @@ public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
+    // 二叉树中节点的数量
+    public int now = 0;
 
     public TreeNode() {
     }
@@ -34,13 +36,14 @@ public class TreeNode {
         return Head;
     }
 
-    public int now = 0;
 
     /**
-    *先序遍历生成树 1,2,null,4,null,null,5,6,null,null,7,null,null
-            1
-         2     5
-           4 6   7
+     * 先序遍历生成树 1,2,null,4,null,null,5,6,null,null,7,null,null
+     *             1
+     *          2     5
+     *            4 6   7
+     * @param arr
+     * @return
      */
     private TreeNode CreateTreeFirst(Integer[] arr) {
         TreeNode Temp = null;
@@ -58,15 +61,18 @@ public class TreeNode {
         }
         return Temp;
     }
+
     /**
-    *按照数组顺序生成树，按顺序生成
+     * 按照数组顺序生成树，按顺序生成
+     * @param arr
+     * @return
      */
     private TreeNode CreateTree(int[] arr){
         int length = arr.length;
         Queue<TreeNode> q = new LinkedList<TreeNode>();
         TreeNode root = new TreeNode(arr[0]);
         q.add(root);
-        int now = 1;
+        now = 1;
         while (now < length){
             TreeNode node = q.poll();
             if(now < length){
@@ -76,6 +82,36 @@ public class TreeNode {
             if(now < length){
                 node.right = new TreeNode(arr[now++]);
                 q.add(node.right);
+            }
+        }
+        return root;
+    }
+
+    /**
+     * 按层顺序生成二叉树
+     * @param arr
+     * @return
+     */
+    public TreeNode CreateTreeByCe(Integer[] arr){
+        int length = arr.length;
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        TreeNode root = new TreeNode(arr[0]);
+        q.add(root);
+        int now = 1;
+        while (now < length){
+            TreeNode node = q.poll();
+
+            if(now < length&&arr[now]!=null){
+                node.left = new TreeNode(arr[now++]);
+                q.add(node.left);
+            }else{
+                now++;
+            }
+            if(now < length&&arr[now]!=null){
+                node.right = new TreeNode(arr[now++]);
+                q.add(node.right);
+            }else{
+                now++;
             }
         }
         return root;
