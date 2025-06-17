@@ -21,7 +21,7 @@ import Method.TreeNode;
  * -100 <= Node.val <= 100
  * 进阶：你可以使用原地算法（O(1) 额外空间）展开这棵树吗？
  */
-class Solution {
+class Solution_LC114 {
 	public void flatten(TreeNode root) {
 		Root = new TreeNode();
 		MyFlatten(root);
@@ -49,7 +49,7 @@ class Solution {
 // 二叉树展开为链表
 public class LC114 {
 	public static void main (String [] args) {
-		Solution solution = new Solution();
+		Solution_LC114 solution = new Solution_LC114();
 		TreeNode root = new TreeNode();
 		Integer[] arr=  new Integer[]{1,2,5,3,4,null,6};
 		root = root.CreateTreeByCe(arr);
