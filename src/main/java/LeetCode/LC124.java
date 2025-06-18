@@ -21,7 +21,7 @@ import Method.TreeNode;
  * 树中节点数目范围是 [1, 3 * 104]
  * -1000 <= Node.val <= 1000
  */
-class Solution {
+class Solution_LC124 {
 	private int MAX = Integer.MIN_VALUE;
 	public int maxPathSum(TreeNode root) {
 		DFSPath(root);
@@ -44,7 +44,7 @@ class Solution {
 // 二叉树中的最大路径和
 public class LC124 {
 	public static void main (String [] args) {
-		Solution solution = new Solution ();
+		Solution_LC124 solution = new Solution_LC124 ();
 		TreeNode root = new TreeNode();
 		Integer[] res = new Integer[]{-10,9,20,null,null,15,7};
 		root = root.CreateTreeByCe(res);
