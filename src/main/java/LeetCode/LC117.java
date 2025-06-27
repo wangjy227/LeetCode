@@ -29,20 +29,20 @@ import java.util.Queue;
  * 你只能使用常量级额外空间。
  * 使用递归解题也符合要求，本题中递归程序的隐式栈空间不计入额外空间复杂度。
  */
-class Node {
+class LC117_Node {
     public int val;
-    public Node left;
-    public Node right;
-    public Node next;
+    public LC117_Node left;
+    public LC117_Node right;
+    public LC117_Node next;
 
-    public Node() {
+    public LC117_Node() {
     }
 
-    public Node(int _val) {
+    public LC117_Node(int _val) {
         val = _val;
     }
 
-    public Node(int _val, Node _left, Node _right, Node _next) {
+    public LC117_Node(int _val, LC117_Node _left, LC117_Node _right, LC117_Node _next) {
         val = _val;
         left = _left;
         right = _right;
@@ -60,9 +60,9 @@ class Node {
  * 	  4-> 5->			7 -> null
  */
 class Solution_LC117 {
-    public Node connect(Node root) {
+    public LC117_Node connect(LC117_Node root) {
         // 存储二叉树的节点
-        Queue<Node> quearr = new LinkedList<>();
+        Queue<LC117_Node> quearr = new LinkedList<>();
         // 存储节点所在的层数
         Queue<Integer> quenum = new LinkedList<>();
         quearr.add(root);
@@ -71,13 +71,13 @@ class Solution_LC117 {
         return root;
     }
 
-    private void create(Queue<Node> quearr, Queue<Integer> quenum) {
+    private void create(Queue<LC117_Node> quearr, Queue<Integer> quenum) {
         if(quearr.isEmpty()||quenum.isEmpty()) return;
         // 获得首个节点的 Node值 和 所在层数
         int n = quenum.poll();
-        Node cur = quearr.poll();
+        LC117_Node cur = quearr.poll();
         while (cur!=null) {
-            Node t;
+            LC117_Node t;
             // 如果在相同的层数就获取节点作为上一个节点的 next值，否则为 null
             if(!quenum.isEmpty()&&quenum.peek() == n){
                 t = quearr.poll();
@@ -105,12 +105,12 @@ class Solution_LC117 {
 public class LC117 {
     public static void main(String[] args) {
         Solution_LC117 solution = new Solution_LC117();
-        Node root = new Node(1);
-        Node root_l = new Node(2);
-        Node root_r = new Node(3);
-        Node root_l_l = new Node(4);
-        Node root_l_r = new Node(5);
-        Node root_r_r = new Node(7);
+        LC117_Node root = new LC117_Node(1);
+        LC117_Node root_l = new LC117_Node(2);
+        LC117_Node root_r = new LC117_Node(3);
+        LC117_Node root_l_l = new LC117_Node(4);
+        LC117_Node root_l_r = new LC117_Node(5);
+        LC117_Node root_r_r = new LC117_Node(7);
         root.left = root_l;
         root.right = root_r;
         root_l.left = root_l_l;
