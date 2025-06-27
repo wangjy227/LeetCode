@@ -9,9 +9,9 @@ public class CreateLC {
         String javaCode =
                 "package LeetCode;\n\n\n\n" +
                 "public class LC {\n" +
-                "\tpublic static void main (String [] args) {\n" +
-                "\t\tSolution solution = new Solution ();\n" +
-                "\t\tSystem.out.println (solution); \n" +
+                "\tpublic static void main(String[] args) {\n" +
+                "\t\tSolution solution = new Solution();\n" +
+                "\t\tSystem.out.println(solution);\n" +
                 "\t}\n" +
                 "}";
         // 指定文件生成路径
