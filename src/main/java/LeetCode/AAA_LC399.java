@@ -37,7 +37,7 @@ import java.util.Map;
  * 1 <= Cj.length, Dj.length <= 5
  * Ai, Bi, Cj, Dj 由小写英文字母与数字组成
  */
-class Solution {
+class Solution_LC399 {
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         int len = values.length;
         Map<String, List<String>> nummap = new HashMap<>();
