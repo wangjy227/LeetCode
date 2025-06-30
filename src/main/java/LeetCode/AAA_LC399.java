@@ -88,7 +88,7 @@ class Solution_LC399 {
 // 除法求值
 public class AAA_LC399 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution_LC399 solution = new Solution_LC399();
         String[][] equations1 = new String[][]{
                 {"a", "e"},
                 {"b", "e"},
